@@ -22,8 +22,6 @@
     "translation:check": "node ./tasks/checkTranslation.js"
   },
   "engines": {
-    "node": ">=16.15 <=17.*",
-    "pnpm": "7.*"
   },
   "dependencies": {
     "@github/markdown-toolbar-element": "^2.1.1",
