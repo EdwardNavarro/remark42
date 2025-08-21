@@ -88,23 +88,23 @@
       var body = document.querySelector('body');
       var theme = 'light';
 
-      if ('matchMedia' in window) {
-        var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      // if ('matchMedia' in window) {
+      //   var mq = window.matchMedia('(prefers-color-scheme: dark)');
 
-        if (mq.matches) {
-          body.classList.add('document_theme_dark');
-        }
+      //   if (mq.matches) {
+      //     body.classList.add('document_theme_dark');
+      //   }
 
-        function getTheme() {
-          return mq.matches ? 'dark' : 'light';
-        }
+      //   function getTheme() {
+      //     return mq.matches ? 'dark' : 'light';
+      //   }
 
-        theme = getTheme();
+      //   theme = getTheme();
 
-        mq.addListener(function () {
-          REMARK42.changeTheme(getTheme());
-        });
-      }
+      //   mq.addListener(function () {
+      //     REMARK42.changeTheme(getTheme());
+      //   });
+      // }
 
       document.getElementById('toggle-theme').addEventListener('click', function (e) {
         e.preventDefault();
@@ -126,12 +126,18 @@
         host: '<%= htmlWebpackPlugin.options.REMARK_URL %>',
         url: window.location.href,
         components: ['embed', 'counter'],
-        // __colors__: {
-        //   "--color0": "red",
-        // },
-        theme: theme,
-        // locale: "ru",
-        // simple_view: true
+        __colors__: {
+          '--color0': '#404040',
+          '--color9': '#003893',
+          '--color15': '#003893',
+          '--color33': '#0A68FF',
+          '--color47': 'rgba(0, 56, 147, .4)',
+          '--primary-color': '0, 56, 147',
+          '--primary-brighter-color': '0, 78, 204',
+        },
+        theme: 'light',
+        locale: 'es',
+        simple_view: false,
       };
 
       (function (c, d) {
