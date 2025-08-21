@@ -15,6 +15,7 @@ services:
         - SKIP_BACKEND_TEST
         - BACKEND_TEST_TIMEOUT
         - SKIP_FRONTEND_TEST=true
+        - SKIP_FRONTEND_BUILD=true
         - CI
         - GITHUB_REF
         - GITHUB_SHA
